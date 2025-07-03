@@ -1,2 +1,2 @@
 # H30-Indices
-Code used to make H30-Indices (Enhanced K-indices) using magnetometer data
+H30-Indices, an adapted form of K-indices developed by Yamamazi et al., 2022. Here, an adapted set of python scripts used to derive K-index can also derive H30-Indices. The original K-indices script was developed by the TCD Solar Physics Group, https://github.com/TCDSolar/K-IndexCalculator (Blake, 2017). These scripts were updated to operation capacity to derive K-Indices for the MagIE website by the DIAS/TCD Solar Physics group (Malone-Leigh, 2025). Here, slight tweeks were made to allow the scripts to generate H30-Indices.
