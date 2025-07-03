@@ -4,4 +4,4 @@ H30-Indices, an adapted form of K-indices developed by Yamamazi et al., 2022. He
 
 In essence, the adaptation is simple. The original function to calculate K-indices was adapted by:
   a) removing the K = 9 limit for H60 and H30 and replacing it with an unbounded limit following Yamamazi et al. 2022. 
-  b) Allowing the K-index module to run at a shorter 60-minute and 30-minute cadence
+  b) Allowing the K-index module to run at a shorter 60-minute and 30-minute cadence compared to the normal 3-hour
