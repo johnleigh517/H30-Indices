@@ -1,35 +1,19 @@
 """
-Author: Sean Blake, Trinity College Dublin
+Original Authors: Sean Blake, Trinity College Dublin, Johnny Malone Leigh, Dublin Institute for Advanced Studies
 Editor: Johnny Malone Leigh, University of Otago
 
-Date Created: January 2015
-Date Last Edited: November 2024
+Date First Created: January 2015
+Date Last Edited: July 2025
 
 
-Email: blakese@tcd.ie, jmalonel@tcd.ie
+Email: john.m.leigh@otago.ac.nz
 
 
-The purpose of this script is to calculate k indices using modules from k_index_module_pre_houdini.py.
+The purpose of this script is to calculate h30 and k indices using modules from k_index_pre.py.
 
 
-The k-indices (and other plots) are then created and then saved to the DIAS server Houdini.
+The h30 and k-indices (and other plots) are then created and then saved to the DIAS server Houdini. This script has the capacity to operate with real time files, but currently files are manually input.
 
-
-The script is divided into 3 sections: 
-o The normal k-index section,
-o the Valentia k-index section and
-o the email alert section
-
-
-The normal k-index section creates plots for Armagh and Birr.
-
-
-The Valentia k-index section creates plots for Valentia. 
-Valentia data is treated differently as we only have baseline subtracted H, D and Z data.
-
-
-The email alert section reads the values for k-indices from the previous sections and sends the emails,
-if a storm is present.
 """
 import numpy as np
 import datetime
@@ -43,9 +27,7 @@ from scipy.interpolate import InterpolatedUnivariateSpline
 from matplotlib import pyplot as plt
 import matplotlib.font_manager
 from matplotlib.ticker import MultipleLocator, FormatStrFormatter, AutoMinorLocator
-
-from email.mime.multipart import MIMEMultipart
-
+#Importing files from kindex_pre
 from kindex_pre import (nan_helper, time2float,float2time, timedatez,mag_filter, minute_bin, 
                         clean2, k_index, fmi_smoothed, fmi_smoothed2, smoothed,subtracted, colored, 
                         slope_refined, do_k_plots,data_read, h_index,data_read_intermag,do_h_plots)
@@ -65,9 +47,6 @@ k_thres=[540]
 
 
 nowz = datetime.datetime.utcnow() #need utc time
-
-
-
 
 site_count=0 #added to read different variables in lists above 
 year_str=str(nowz.year)
@@ -297,11 +276,12 @@ for k1, k2 in enumerate(sites_obs):
         
         print ("Plotting...")
 
-        
+        #creating k indices
         do_k_plots(k_index3, k_time3, k_timestamp3, minute_time,sitefull_name, save_address,save_address2)
         
         
         #manually loading Hpo indices
+        #Manually editing the rows to allow for cleaner plotting
         hpo=np.loadtxt('/home/johnnyl/Documents/Solar-Tsunami/hp_index2024.txt',usecols=7,skiprows=6270-48)
         
         #hpo=np.loadtxt('/home/johnnyl/Documents/Solar-Tsunami/hp_index2024.txt',usecols=7,skiprows=13566)
@@ -313,9 +293,3 @@ for k1, k2 in enumerate(sites_obs):
         
     #except:
     #    pass
-        
-        
-##############################################################################
-##############################################################################
-#Email alert section
-#Write emails first, then send    
