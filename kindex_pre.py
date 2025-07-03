@@ -1,14 +1,13 @@
 """
 
-Author: Sean Blake, Trinity College Dublin
-Editor: John Malone Leigh, Dublin Institute for Advanced Studies
+Original Authors: Sean Blake, Trinity College Dublin, Johnny Malone Leigh, Dublin Institute for Advanced Studies
+Editor: Johnny Malone Leigh, University of Otago
+
+Date First Created: January 2015
+Date Last Edited: July 2025
 
 
-Date: January 2015
-Date Edited: September 2019
-
-
-Email: blakese@tcd.ie, jmalonel@tcd.ie
+Email: john.m.leigh@otago.ac.nz
 
 
 The purpose of this module is to provide functions which will facilitate the calculation of k-indices using the FMI method, as well as the time derivate mag fields. See http://swans.meteo.be/sites/default/files/documentation/TN-RMI-2010-01_K-LOGIC.pdf for more details.
@@ -20,7 +19,7 @@ Modules Edited: Send_emailz, do_other_plots, do_k_plots
 Modules Added: nan_helper, create_folder and archive_maker
 
 
-Script is upgraded to work for python 3
+Script is upgraded to work for python3
 
 
 With the functions in this module, the FMI method can be used as follows:
