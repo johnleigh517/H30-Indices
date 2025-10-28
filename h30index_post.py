@@ -12,7 +12,7 @@ Email: john.m.leigh@otago.ac.nz
 The purpose of this script is to calculate h30 and k indices using modules from k_index_pre.py.
 
 
-The h30 and k-indices (and other plots) are then created and then saved to the DIAS server Houdini. This script has the capacity to operate with real time files, but currently files are manually input.
+The h30 and k-indices (and other plots) are then created and then saved to the server. This script has the capacity to operate with real time files, but currently files are manually input.
 
 """
 import numpy as np
