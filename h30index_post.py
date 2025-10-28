@@ -257,7 +257,7 @@ for k1, k2 in enumerate(sites_obs):
         
         print ("Final k_index\n")
         k_index3, k_timestamp3, k_time3 = k_index(minute_time, subtracted_bx2, subtracted_by2, k_max)
-        
+        #Can adapt between H30 and H60 here, '30' or '60'
         mode='30'
         h_indexval, h_timestamp3, h_time3 = h_index(minute_time, subtracted_bx2, subtracted_by2, k_max,mode)
         plt.figure()
