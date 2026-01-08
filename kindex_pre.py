@@ -679,7 +679,13 @@ def h_index(minute_time, minute_bx, minute_by, k9,mode):
 
                 vary = max(minute_by[start:index-1]) - min(minute_by[start:index-1])
 
-    
+                varx2=max(np.abs(minute_bx[start:index-1]))
+                vary2=max(np.abs(minute_by[start:index-1]))
+                
+                if varx2>varx:
+                    varx=varx2
+                if vary2>vary:
+                    vary=vary2
 
                 # append max variation for that block
 
@@ -706,6 +712,20 @@ def h_index(minute_time, minute_bx, minute_by, k9,mode):
     varx = max(minute_bx[start:-1]) - min(minute_bx[start:-1])
 
     vary = max(minute_by[start:-1]) - min(minute_by[start:-1])
+
+    varx = max(minute_bx[start:-1]) - min(minute_bx[start:-1])
+
+    vary = max(minute_by[start:-1]) - min(minute_by[start:-1])
+    
+    
+    varx2=max(np.abs(minute_bx[start:index-1]))
+    vary2=max(np.abs(minute_by[start:index-1]))
+    
+    if varx2>varx:
+        varx=varx2
+    if vary2>vary:
+        vary=vary2
+    
     #print(variation)
     variation.append(max(varx, vary))
     
