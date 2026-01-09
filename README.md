@@ -1,4 +1,5 @@
 # H30-Indices
+
 H30-Indices, an adapted form of K-indices developed by Yamazaki et al., 2022. Here, an adapted set of python scripts used to derive K-index can also derive H30 and H60-Indices. The original K-indices script was developed by the TCD Solar Physics Group, https://github.com/TCDSolar/K-IndexCalculator (Blake, 2017). These scripts were updated to operation capacity to derive K-Indices for the MagIE website by the DIAS/TCD Solar Physics group (Malone-Leigh, 2025). Here, slight tweeks were made to allow the scripts to generate H30-Indices.
 
 
@@ -12,7 +13,9 @@ Different modes can be selected dependent based on the needs. The main two modes
 
 # Example Output
 
+An example output from Awarua for the May 2024 "Gannon" is shown below
 
+![Awarua May 2024](./Image/May2024Awa.png)
 # Packages Required
 
 Most versions of these packages should work. The specific packages I used were 
