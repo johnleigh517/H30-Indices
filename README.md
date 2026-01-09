@@ -7,3 +7,13 @@ In essence, the adaptation is simple. The original function to calculate K-indic
   b) Allowing the K-index module to run at a shorter 60-minute and 30-minute cadence compared to the normal 3-hour.
 
 An adaptation Finnish Meteorological Compuing method is used to subtract the solar regular curve(Menvielle et al., 1995).
+
+# Packages Required
+
+Most versions of these packages should work. The specific packages I used were 
+
+o Python 3.8.3
+o Numpy 1.23.1
+o Scipy 1.9.3
+o Matplotlib 3.6.2
+o Seaborn 0.12.2 (optional for plotting)
