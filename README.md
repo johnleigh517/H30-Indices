@@ -8,6 +8,11 @@ In essence, the adaptation is simple. The original function to calculate K-indic
 
 An adaptation Finnish Meteorological Compuing method is used to subtract the solar regular curve(Menvielle et al., 1995).
 
+Different modes can be selected dependent based on the needs. The main two modes are H30 and Hpo30. H30 generates the local H30 indices, Hpo30 generates planetary Hpo indices using data downloaded from GFS science. The H60 and Hpo60 version of these can also be used 
+
+# Example Output
+
+
 # Packages Required
 
 Most versions of these packages should work. The specific packages I used were 
