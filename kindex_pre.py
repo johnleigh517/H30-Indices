@@ -4,7 +4,7 @@ Original Authors: Sean Blake, Trinity College Dublin, Johnny Malone Leigh, Dubli
 Editor: Johnny Malone Leigh, University of Otago
 
 Date First Created: January 2015
-Date Last Edited: July 2025
+Date Last Edited: January 2026
 
 
 Email: john.m.leigh@otago.ac.nz
@@ -715,10 +715,6 @@ def h_index(minute_time, minute_bx, minute_by, k9,mode):
 
 
     # add last entry
-
-    varx = max(minute_bx[start:-1]) - min(minute_bx[start:-1])
-
-    vary = max(minute_by[start:-1]) - min(minute_by[start:-1])
 
     varx = max(minute_bx[start:-1]) - min(minute_bx[start:-1])
 
