@@ -53,7 +53,11 @@ With the functions in this module, the FMI method can be used as follows:
 
 
 
-These are the final K-Indices needed. Phew!
+8) An additional step allows calculation of H30 indices using h_index()
+
+
+
+9) H indices or alternatively Hpo indices downloaded from GFZ, can then be plotted
 
 """
 
@@ -678,7 +682,10 @@ def h_index(minute_time, minute_bx, minute_by, k9,mode):
                 varx = max(minute_bx[start:index-1]) - min(minute_bx[start:index-1])
 
                 vary = max(minute_by[start:index-1]) - min(minute_by[start:index-1])
-
+                
+                #range between max and min vs. absolute value needs to be compared for H
+                #this step is an addition to allow H30 to match K indices better
+                
                 varx2=max(np.abs(minute_bx[start:index-1]))
                 vary2=max(np.abs(minute_by[start:index-1]))
                 
@@ -738,6 +745,7 @@ def h_index(minute_time, minute_bx, minute_by, k9,mode):
 
     # now to use these variations to calculate the k-index value
     if mode=='30':
+        #H30 tables from Yamazaki et al 2022, edited K index tables
         niemegk = [267*1.3*1.25,267*1.3,267,190,119,65.7,33.9,17.9,8.89,
                                4.46,2.16,0]
         #niemegk = [267,190,119,65.7,33.9,17.9,8.89,
@@ -747,7 +755,7 @@ def h_index(minute_time, minute_bx, minute_by, k9,mode):
                                12.4,6.11,2.97,0]
         #niemegk = [337,218,144,82.7,44.7,24.3,
         #                       12.4,6.11,2.97]
-    #niemegk=np.array(niemegk)
+
     thresmax=np.max(niemegk)
     if np.max(variation)>thresmax:
         print('here')
@@ -1616,7 +1624,7 @@ def do_h_plots(h_index3, h_time3, h_timestamp3, minute_time, sitefull, save_addr
 
     plt.figtext(0.835, 0.02, timestamp_string, fontsize = 11, style='italic')
 
-
+    #adding axvline specific to lines in Malone-Leigh et al., 2026
     plt.axvline(datetime.datetime(2024,5,10,22,45),color='black',linestyle='--',linewidth=3)
     plt.axvline(datetime.datetime(2024,5,11,8,45),color='black',linestyle='--',linewidth=3)
     plt.axvline(datetime.datetime(2024,5,11,12,45),color='black',linestyle='--',linewidth=3)
