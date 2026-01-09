@@ -122,6 +122,8 @@ for k1, k2 in enumerate(sites_obs):
             ]
         
     #try: #try loop added in case site fails due to missing data
+    #Add this try loop out when processing in real time
+    #And comment out the placeholder 1==1
     if 1==1:
         file_list = []
         for k in file_full:
