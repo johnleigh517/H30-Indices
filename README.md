@@ -13,7 +13,7 @@ Different modes can be selected dependent based on the needs. The main two modes
 
 # Example Output
 
-An example output from Awarua for the May 2024 "Gannon" is shown below:
+An example output from Awarua for the May 2024 "Gannon" storm is shown below:
 
 ![Awarua May 2024](./Image/May2024Awa.png)
 # Packages Required
